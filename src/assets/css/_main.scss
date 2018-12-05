@@ -1,0 +1,12 @@
+body {
+  max-width: 1280px;
+  margin: auto;
+
+  @media($tablet) {
+    padding: $space-s;
+  }
+
+  @media($desktop) {
+    padding: $space-m;
+  }
+}

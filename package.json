@@ -1,0 +1,27 @@
+{
+  "name": "test_hubside",
+  "version": "1.0.0",
+  "description": "package dependencies for Hubside integrateur test",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ralf5543/test_hubside.git"
+  },
+  "author": "Raphaël Bigot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ralf5543/test_hubside/issues"
+  },
+  "homepage": "https://github.com/ralf5543/test_hubside#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sass": "^4.0.2"
+  }
+}
