@@ -1,6 +1,7 @@
 body {
   max-width: 1280px;
   margin: auto;
+  padding: $space-xs;
 
   @media($tablet) {
     padding: $space-s;

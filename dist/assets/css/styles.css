@@ -310,7 +310,8 @@ input::-webkit-inner-spin-button {
 /* usefull mixins */
 body {
   max-width: 1280px;
-  margin: auto; }
+  margin: auto;
+  padding: 4px; }
   @media (min-width: 769px) {
     body {
       padding: 8px; } }
@@ -319,3 +320,103 @@ body {
       padding: 16px; } }
 
 /* the css for the website itself */
+.sp-sinistre-timeline {
+  position: relative;
+  background-color: #eee;
+  border: 4px solid #0688cc; }
+  .sp-sinistre-timeline::after {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    content: '';
+    width: 0;
+    height: 0;
+    top: 100%;
+    border-style: solid;
+    border-width: 18px 18px 0;
+    border-color: #0688cc transparent transparent transparent; }
+  .sp-sinistre-timeline > ol > li {
+    position: relative;
+    padding-left: 28px; }
+    .sp-sinistre-timeline > ol > li a {
+      display: inline-block; }
+    .sp-sinistre-timeline > ol > li > ol {
+      padding: 0 16px; }
+      .sp-sinistre-timeline > ol > li > ol li {
+        position: relative; }
+        .sp-sinistre-timeline > ol > li > ol li::before {
+          position: absolute;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+                  transform: translateY(-50%);
+          content: '';
+          width: 20px;
+          height: 20px;
+          background-color: white;
+          border-radius: 50%;
+          left: -22px;
+          -webkit-transform: translate(-50%, -50%);
+                  transform: translate(-50%, -50%); }
+        .sp-sinistre-timeline > ol > li > ol li.main::before {
+          background-color: #0688cc;
+          border: 4px solid white;
+          box-sizing: content-box; }
+    .sp-sinistre-timeline > ol > li::before {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 100%;
+      left: 16px;
+      background-color: white; }
+  .sp-sinistre-timeline > ol > li:not(.active)::before {
+    background-color: #bfbfbf; }
+  .sp-sinistre-timeline > ol > li:not(.active) > ol {
+    display: none; }
+
+.step-title {
+  position: relative;
+  margin: 0;
+  padding: 16px;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: #7a7a7c; }
+  .step-title::after {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    content: '';
+    width: 0;
+    height: 0;
+    right: 16px;
+    border-style: solid;
+    border-width: 11px 0 11px 12px;
+    border-color: transparent transparent transparent #bfbfbf; }
+
+.active {
+  background-color: #0688cc;
+  color: white; }
+  .active .step-title {
+    margin-bottom: 16px;
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-weight: bold;
+    color: white; }
+    .active .step-title::after {
+      content: none; }
+
+.date {
+  margin: 0;
+  color: white;
+  font-size: 1.5rem; }
+
+.label {
+  margin-bottom: 16px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold; }
+
+.time-bubble {
+  display: none; }

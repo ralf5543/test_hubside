@@ -1,0 +1,136 @@
+$barWidth: $space-s + $space-xs;
+$circleWidth: $space-s + $barWidth;//so the disc is always bigger than the bar
+
+.sp-sinistre-timeline {
+  position: relative;
+  background-color: $lightGrey;
+  border: 4px solid $primaryColor;
+
+  &::after {
+    //triangle
+    @include center-horizontally;
+
+    content: '';
+    width: 0;
+    height: 0;
+    top: 100%;
+    border-style: solid;
+    border-width: 18px 18px 0;
+    border-color: $primaryColor transparent transparent transparent;
+  }
+
+  > ol > li {
+    position: relative;
+    padding-left: $space-m + $barWidth;
+
+    a {
+      display: inline-block;
+    }
+
+    > ol {
+      padding: 0 $space-m;
+
+      li {
+        position: relative;
+
+        &::before {
+          //circles
+          @include center-vertically;
+
+          content: '';
+          width: $circleWidth;
+          height: $circleWidth;
+          background-color: $secondaryColor;
+          border-radius: 50%;
+          left: -($barWidth / 2) - $space-m;
+          transform: translate(-50%, -50%);
+        }
+
+        &.main {
+          &::before {
+            background-color: $primaryColor;
+            border: $space-xs solid $secondaryColor;
+            box-sizing: content-box;
+          }
+        }
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: $barWidth;
+      height: 100%;
+      left: $space-m;
+      background-color: $secondaryColor;
+    }
+  }
+
+  > ol > li:not(.active) {
+    &::before {
+      background-color: $grey;
+    }
+
+    > ol {
+      display: none;
+    }
+  }
+}
+
+.step-title {
+  position: relative;
+  margin: 0;
+  padding: $space-m;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: $darkGrey;
+
+  &::after {
+    //triangle
+    @include center-vertically;
+
+    content: '';
+    width: 0;
+    height: 0;
+    right: $space-m;
+    border-style: solid;
+    border-width: 11px 0 11px 12px;
+    border-color: transparent transparent transparent $grey;
+  }
+}
+
+.active {
+  background-color: $primaryColor;
+  color: $secondaryColor;
+
+  .step-title {
+    margin-bottom: $space-m;
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-weight: bold;
+    color: $secondaryColor;
+
+    &::after {
+      content: none;
+    }
+  }
+}
+
+.date {
+  margin: 0;
+  color: $secondaryColor;
+  font-size: 1.5rem;
+}
+
+.label {
+  margin-bottom: $space-m;
+  color: $secondaryColor;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+//==========================----------------------- Time bubbles
+.time-bubble {
+  display: none;
+}
