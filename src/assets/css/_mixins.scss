@@ -30,3 +30,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin position-steps($item-count) {
+  > li {
+    @for $i from 1 through $item-count {
+      &:nth-of-type(#{$i}) {
+        $elementSize: 100 / $item-count;
+        width: $elementSize * 1%;
+        left: (($i - 1) * $elementSize) * 1%;
+      }
+    }
+  }
+}

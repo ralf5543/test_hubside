@@ -45,7 +45,8 @@ $circleWidth: $space-s + $barWidth;//so the disc is always bigger than the bar
         padding: 0 $space-m;
 
         @media ($tablet) {
-          display: table;
+        @include position-steps(4);
+
           min-height: 300px;
         }
 
@@ -78,18 +79,25 @@ $circleWidth: $space-s + $barWidth;//so the disc is always bigger than the bar
           }
 
           @media ($tablet) {
-            display: table-cell;
+            position: absolute;
+            top: 50%;
             padding: $space-m;
             text-align: center;
 
             &:nth-child(odd) {
-              background-color: red;
-              vertical-align: top;
+              transform: translateY(-100%);
+
+              &::before {
+                top: 100%;
+              }
             }
 
             &:nth-child(even) {
-              background-color: green;
               vertical-align: bottom;
+
+              &::before {
+                top: 0;
+              }
             }
           }
         }
@@ -102,6 +110,13 @@ $circleWidth: $space-s + $barWidth;//so the disc is always bigger than the bar
         height: 100%;
         left: $space-m;
         background-color: $secondaryColor;
+
+        @media ($tablet) {
+          @include center-vertically;
+          height: $barWidth;
+          width: 100%;
+          left: 0;
+        }
       }
 
       &:not(.active) {

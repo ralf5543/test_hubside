@@ -3,3 +3,7 @@
 #docs used for specs
 doc
 node_modules
+
+#sublime files
+hubside.sublime-project
+hubside.sublime-workspace
