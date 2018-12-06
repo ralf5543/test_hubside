@@ -341,16 +341,16 @@ body {
     border-color: #0688cc transparent transparent transparent; }
   @media (min-width: 769px) {
     .sp-sinistre-timeline > ol {
-      display: table;
       width: 100%; } }
   .sp-sinistre-timeline > ol > li {
     position: relative;
     padding-left: 28px; }
     @media (min-width: 769px) {
       .sp-sinistre-timeline > ol > li {
-        display: table-cell;
         border-left: 2px solid white;
-        border-right: 2px solid white; }
+        border-right: 2px solid white;
+        float: left;
+        min-height: 450px; }
         .sp-sinistre-timeline > ol > li:nth-of-type(1) ol > li:nth-of-type(1) {
           width: 50%;
           left: 0%; }
@@ -467,6 +467,9 @@ body {
   .sp-sinistre-timeline .active {
     background-color: #0688cc;
     color: white; }
+    @media (min-width: 769px) {
+      .sp-sinistre-timeline .active {
+        width: 56%; } }
     .sp-sinistre-timeline .active .step-title {
       margin-bottom: 16px;
       font-size: 2.8rem;
