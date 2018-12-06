@@ -1,0 +1,8 @@
+MISSION :
+Créer une feuille de style CSS pour habiller le HTML fourni (et obtenir un rendu conforme à la copie d'écran ci-jointe)..
+La page doit être compatible tout device et tout navigateur (IE>8).
+L'ensemble doit être responsive avec largeur variable (mise ne forme élastique) avec un palier à 768px pour la vue mobile.
+Pas de JS ni de flexbox ni de modification du HTML fourni !
+
+BONUS : Gérer en CSS l'affichage des "time-bubble" en roll-over sur le lien.
+La position (haute ou basse) de la bubble dépend de la position du texte par rapport au point. Si le texte est en dessous du point la bubble doit s'afficher au dessus (et inversement).

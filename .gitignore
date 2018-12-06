@@ -1,7 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
 
-#docs used for specs
-doc
 node_modules
 
 #sublime files

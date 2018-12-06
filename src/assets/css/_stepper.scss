@@ -1,5 +1,5 @@
 $barWidth: $space-s + $space-xs;
-$circleWidth: $space-s + $barWidth;//so the disc is always bigger than the bar
+$circleWidth: $space-s + $barWidth;//so the disc is always bigger than the stepper bar
 $stepperMargin: 26px;
 
 .sp-sinistre-timeline {
@@ -27,7 +27,6 @@ $stepperMargin: 26px;
 
   > ol {
     @media ($tablet) {
-      //display: table;
       width: 100%;
     }
     > li {
@@ -35,15 +34,15 @@ $stepperMargin: 26px;
       padding-left: $space-m + $barWidth;
 
       @media ($tablet) {
-        //display: table-cell;
         border-left: $space-xs / 2 solid $secondaryColor;
         border-right: $space-xs / 2 solid $secondaryColor;
-        float: left;//ugly fix for ie
+        float: left;//ugly fix for ie (can't support positionned absolute elements inside display-table elements)
         min-height: 450px;//ugly fix for ie
 
 
         &:nth-of-type(1) {
           ol {
+            //without modern css or JS, we need to declare how many steps in the each content
             @include position-steps(2);
           }
         }
@@ -110,7 +109,7 @@ $stepperMargin: 26px;
             padding: $space-m;
             text-align: center;
             z-index: 1;
-            //so the bubbles inside it will be placed on the z-index
+            //so the bubbles inside it will be easily positionable on the z-index
 
             &:nth-child(odd) {
               transform: translateY(-100%);
@@ -180,7 +179,7 @@ $stepperMargin: 26px;
     color: $secondaryColor;
 
     @media ($tablet) {
-      width: 56%;//ugly fix for ie
+      width: 56%;//ie fix, because no flexbox, and no table-cell
     }
 
     .step-title {
